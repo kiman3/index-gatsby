@@ -15,7 +15,7 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO ({ description, lang, meta, keywords = [], title, slug }) {
+function SEO ({ description, lang, meta, keywords = [], title }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -78,7 +78,7 @@ function SEO ({ description, lang, meta, keywords = [], title, slug }) {
                 { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
             ]}
             bodyAttributes={{
-              class: data.slug
+              class: data.title
             }}
           />
         )
